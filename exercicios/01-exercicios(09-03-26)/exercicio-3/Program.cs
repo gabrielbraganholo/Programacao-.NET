@@ -9,7 +9,7 @@
             p.nome = Console.ReadLine();
             p.DocumentarItens();
 
-            Console.WriteLine("Vida: "+p.vida);
+            Console.WriteLine("\nVida: "+p.vida+"\n");
 
             p.Movimentar();
             p.Atacar();
