@@ -8,8 +8,7 @@ namespace exercicio_3
 {
     class ProvaObjetiva : AtividadeAcademica
     {
-        public ProvaObjetiva(string titulo, decimal notaMaxima)
-            : base(titulo, notaMaxima)
+        public ProvaObjetiva(string titulo, decimal notaMaxima) : base(titulo, notaMaxima)
         {
         }
 

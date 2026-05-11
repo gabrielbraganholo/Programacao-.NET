@@ -22,9 +22,7 @@ namespace exercicio_3
             {
                 if (value < 0 || value > 10)
                 {
-                    throw new InvalidOperationException(
-                        "A nota máxima deve respeitar a escala da instituição (0 a 10)"
-                    );
+                    throw new InvalidOperationException("A nota máxima deve respeitar a escala da instituição (0 a 10)");
                 }
 
                 notaMaxima = value;
