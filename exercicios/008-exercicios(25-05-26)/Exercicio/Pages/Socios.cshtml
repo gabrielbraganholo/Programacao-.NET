@@ -1,0 +1,39 @@
+﻿@page
+@model Exercicio.Pages.SociosModel
+@{
+    ViewData["Title"] = "Sócios";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Idade</th>
+            <th>Mensalidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var socio in Model.Socios)
+        {
+            <tr>
+                <td>
+                    @if (socio.Categoria == "Ouro")
+                    {
+                        <strong>@socio.Nome</strong>
+                    }
+                    else
+                    {
+                        @socio.Nome
+                    }
+                </td>
+                <td>@socio.Categoria</td>
+                <td>@socio.Idade</td>
+                <td>@socio.Mensalidade.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
