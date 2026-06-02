@@ -1,0 +1,41 @@
+﻿@page
+@model Exercicio.Pages.CalculadoraDivisaoModel
+@{
+    ViewData["Title"] = "Calculadora de Divisão Segura";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div>
+        <label asp-for="Numero1" style="display:inline-block; width:140px;">
+            Primeiro Número
+        </label>
+        <input asp-for="Numero1" />
+    </div>
+
+    <div>
+        <label asp-for="Numero2" style="display:inline-block; width:140px;">
+            Segundo Número
+        </label>
+        <input asp-for="Numero2" />
+    </div>
+
+    <br />
+
+    <button type="submit">Dividir</button>
+</form>
+
+@if (Model.Resultado.HasValue)
+{
+    <div class="alert alert-success mt-3">
+        Resultado: @Model.Resultado
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(Model.MensagemDeErro))
+{
+    <div class="alert alert-danger mt-3">
+        @Model.MensagemDeErro
+    </div>
+}

@@ -1,0 +1,28 @@
+﻿@page
+@model Exercicio.Pages.VerificadorAcessoModel
+@{
+    ViewData["Title"] = "Verificador de Acesso";
+}
+
+<h2>Verificador de Acesso</h2>
+
+<form method="post">
+    <div>
+        <label asp-for="Nome" style="display:inline-block; width:60px;"></label>
+        <input asp-for="Nome" />
+    </div>
+
+    <div>
+        <label asp-for="Idade" style="display:inline-block; width:60px;"></label>
+        <input asp-for="Idade" />
+    </div>
+
+    <br />
+
+    <button type="submit">Verificar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.MensagemDeRetorno))
+{
+    <p>@Model.MensagemDeRetorno</p>
+}
