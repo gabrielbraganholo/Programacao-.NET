@@ -1,0 +1,3 @@
+1;Notebook Dell;PAT-2026A;suporte@empresa.com;Disponivel
+2;Projetor Epson;PAT-9988;laboratorio@empresa.com;EmUso
+3;Impressora HP;PAT-4512;ti@empresa.com;Manutencao

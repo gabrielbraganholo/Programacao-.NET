@@ -1,0 +1,21 @@
+﻿@page "{codigo:int}"
+@model Avaliacao_2.Pages.Equipamentos.ExcluirModel
+
+<h1>Excluir Equipamento</h1>
+
+@if (Model.Equipamento == null)
+{
+    <p>Equipamento não encontrado.</p>
+}
+else
+{
+    <p>Tem certeza que deseja excluir:</p>
+
+    <p><b>@Model.Equipamento.Nome</b></p>
+
+    <form method="post">
+        <input type="hidden" asp-for="Equipamento.Codigo" />
+        <button type="submit">Sim, excluir</button>
+        <a asp-page="Index">Cancelar</a>
+    </form>
+}

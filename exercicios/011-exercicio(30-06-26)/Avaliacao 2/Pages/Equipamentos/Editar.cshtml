@@ -1,0 +1,49 @@
+﻿@page "{codigo:int}"
+@model Avaliacao_2.Pages.Equipamentos.EditarModel
+@{
+    ViewData["Title"] = "Editar Equipamento";
+}
+
+<h1>Editar Equipamento</h1>
+
+@if (Model.Equipamento == null)
+{
+    <p>Equipamento não encontrado.</p>
+}
+else
+{
+    <form method="post">
+
+        <input type="hidden" asp-for="Equipamento.Codigo" />
+
+        <div>
+            <label>Nome</label>
+            <input asp-for="Equipamento.Nome" />
+            <span asp-validation-for="Equipamento.Nome"></span>
+        </div>
+
+        <div>
+            <label>Patrimônio</label>
+            <input asp-for="Equipamento.Patrimonio" type="password" />
+            <span asp-validation-for="Equipamento.Patrimonio"></span>
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input asp-for="Equipamento.Email" />
+            <span asp-validation-for="Equipamento.Email"></span>
+        </div>
+
+        <div>
+            <label>Situação</label>
+            <select asp-for="Equipamento.Situacao"
+                    asp-items="Model.Situacoes">
+            </select>
+        </div>
+
+        <button type="submit">Salvar alterações</button>
+
+        <a asp-page="Index">Cancelar</a>
+
+    </form>
+}

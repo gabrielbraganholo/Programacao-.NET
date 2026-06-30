@@ -1,0 +1,20 @@
+﻿@page "{codigo:int}"
+@model Avaliacao_2.Pages.Equipamentos.DetalhesModel
+
+<h1>Detalhes do Equipamento</h1>
+
+@if (Model.Equipamento == null)
+{
+    <p>Equipamento não encontrado.</p>
+}
+else
+{
+    <p><b>Código:</b> @Model.Equipamento.Codigo</p>
+    <p><b>Nome:</b> @Model.Equipamento.Nome</p>
+    <p><b>Email:</b> @Model.Equipamento.Email</p>
+    <p><b>Situação:</b> @Model.Equipamento.Situacao</p>
+
+    <p><b>Patrimônio:</b> ********</p>
+
+    <a asp-page="Index">Voltar</a>
+}

@@ -1,0 +1,40 @@
+﻿@page
+@model Avaliacao_2.Pages.Equipamentos.CadastroModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h1>Cadastrar Equipamento</h1>
+
+<form method="post">
+
+    <div>
+        <label>Código</label>
+        <input asp-for="Equipamento.Codigo" />
+    </div>
+
+    <div>
+        <label>Nome</label>
+        <input asp-for="Equipamento.Nome" />
+    </div>
+
+    <div>
+        <label>Patrimônio</label>
+        <input asp-for="Equipamento.Patrimonio" type="password" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Equipamento.Email" />
+    </div>
+
+    <div>
+        <label>Situação</label>
+        <select asp-for="Equipamento.Situacao"
+                asp-items="Model.Situacoes">
+        </select>
+    </div>
+
+    <button type="submit">Salvar</button>
+
+</form>

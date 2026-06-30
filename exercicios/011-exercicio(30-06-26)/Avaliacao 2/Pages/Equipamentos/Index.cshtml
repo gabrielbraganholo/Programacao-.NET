@@ -1,0 +1,76 @@
+﻿@page
+@model Avaliacao_2.Pages.Equipamentos.IndexModel
+@{
+    ViewData["Title"] = "Equipamentos";
+}
+
+<h1>Equipamentos</h1>
+
+@if (TempData["Sucesso"] != null)
+{
+    <p style="color:green;">
+        @TempData["Sucesso"]
+    </p>
+}
+
+<p>
+    <a asp-page="Cadastro">Cadastrar Novo Equipamento</a>
+</p>
+
+@if (Model.Equipamentos.Count == 0)
+{
+    <p>Não há equipamentos cadastrados.</p>
+}
+else
+{
+    <table class="table table-bordered">
+
+        <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Situação</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (var equipamento in Model.Equipamentos)
+        {
+            <tr>
+                <td>@equipamento.Codigo</td>
+                <td>@equipamento.Nome</td>
+                <td>@equipamento.Email</td>
+                <td>@equipamento.Situacao</td>
+
+                <td>
+
+                    <a asp-page="Detalhes"
+                       asp-route-codigo="@equipamento.Codigo">
+                        Detalhes
+                    </a>
+
+                    |
+
+                    <a asp-page="Editar"
+                       asp-route-codigo="@equipamento.Codigo">
+                        Editar
+                    </a>
+
+                    |
+
+                    <a asp-page="Excluir"
+                       asp-route-codigo="@equipamento.Codigo">
+                        Excluir
+                    </a>
+
+                </td>
+            </tr>
+        }
+
+        </tbody>
+
+    </table>
+}
